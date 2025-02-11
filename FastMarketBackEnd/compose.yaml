@@ -1,0 +1,6 @@
+﻿services:
+  fastmarketbackend:
+    image: fastmarketbackend
+    build:
+      context: .
+      dockerfile: FastMarketBackEnd/Dockerfile

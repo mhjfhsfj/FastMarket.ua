@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="..\buildMultiTargeting\FastMarketBackEnd.props" />
+  <Import Project="../buildMultiTargeting/FastMarketBackEnd.props" />
 </Project>

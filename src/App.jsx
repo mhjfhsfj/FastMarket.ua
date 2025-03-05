@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Menu from "./components/Menu";
 import Items from "./components/Items";
 import CartModal from "./components/CartModal";
 import FavoritesModal from "./components/FavoritesModal";
+
+
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -18,17 +21,42 @@ function App() {
   const [favorites, setFavorites] = useState([]);
   const [isFavoritesModalOpen, setFavoritesModalOpen] = useState(false);
 
-  // Toggle modals
+  // ACCOUNT (LOGIN) MODAL STATE
+  const [isAccountModalOpen, setAccountModalOpen] = useState(false);
+
+  // Toggle modal functions
   const toggleCartModal = () => setCartModalOpen(prev => !prev);
   const toggleFavoritesModal = () => setFavoritesModalOpen(prev => !prev);
+  const toggleAccountModal = () => setAccountModalOpen(prev => !prev);
 
-  // Add to cart: if product exists, add one; but later we override click behavior in Items.
+  // Functions to increment, decrement, and remove items in the cart
+  const incrementQuantity = (productId) => {
+    setCart(prevCart =>
+      prevCart.map(item =>
+        item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  const decrementQuantity = (productId) => {
+    setCart(prevCart =>
+      prevCart.map(item => {
+        if (item.id === productId && item.quantity > 1) {
+          return { ...item, quantity: item.quantity - 1 };
+        }
+        return item;
+      })
+    );
+  };
+
+  const removeFromCart = (productId) => {
+    setCart(prevCart => prevCart.filter(item => item.id !== productId));
+  };
+
+  // Add to cart: if product is already in cart, do nothing.
   const addToCart = (product) => {
-    setCart((prevCart) => {
-      const existingIndex = prevCart.findIndex(item => item.id === product.id);
-      if (existingIndex !== -1) {
-        // If already in cart, you could update quantity if desired.
-        // For this requirement, we won't increment—just open the cart modal.
+    setCart(prevCart => {
+      if (prevCart.some(item => item.id === product.id)) {
         return prevCart;
       } else {
         return [...prevCart, { ...product, quantity: 1 }];
@@ -36,13 +64,14 @@ function App() {
     });
   };
 
-  // Toggle favorite: add/remove from favorites.
+  // Toggle favorite: add or remove product from favorites.
   const toggleFavorite = (product) => {
-    setFavorites((prevFavorites) => {
-      const isFav = prevFavorites.some(item => item.id === product.id);
-      return isFav 
-        ? prevFavorites.filter(item => item.id !== product.id)
-        : [...prevFavorites, product];
+    setFavorites(prevFavorites => {
+      if (prevFavorites.some(item => item.id === product.id)) {
+        return prevFavorites.filter(item => item.id !== product.id);
+      } else {
+        return [...prevFavorites, product];
+      }
     });
   };
 
@@ -53,13 +82,16 @@ function App() {
         favorites={favorites}
         toggleCartModal={toggleCartModal}
         toggleFavoritesModal={toggleFavoritesModal}
+        toggleAccountModal={toggleAccountModal}
       />
 
       {isCartModalOpen && (
         <CartModal
           cart={cart}
           toggleCartModal={toggleCartModal}
-          /* other cart functions if needed */
+          incrementQuantity={incrementQuantity}
+          decrementQuantity={decrementQuantity}
+          removeFromCart={removeFromCart}
         />
       )}
 
@@ -72,6 +104,10 @@ function App() {
           cart={cart}
           toggleCartModal={toggleCartModal}
         />
+      )}
+
+      {isAccountModalOpen && (
+        <AccountModal toggleAccountModal={toggleAccountModal} />
       )}
 
       <div className="main-content">

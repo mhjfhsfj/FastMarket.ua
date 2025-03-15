@@ -1,7 +1,45 @@
-﻿services:
+version: '3.8'
+
+services:
   fastmarketbackend:
     image: fastmarketbackend
     build:
-      context: .
-      dockerfile: FastMarketBackEnd/Dockerfile
+      context: .  # Контекст збірки (поточна директорія)
+      dockerfile: FastMarketBackEnd/Dockerfile  # Шлях до Dockerfile
+    container_name: fastmarketbackend
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    depends_on:
+      - db
+    networks:
+      - fastmarket-network
 
+  db:
+    image: postgres:latest
+    container_name: fastmarket-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: securepassword
+      POSTGRES_DB: fastmarketdb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - fastmarket-network
+
+  redis:
+    image: redis:latest
+    container_name: fastmarket-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - fastmarket-network
+
+volumes:
+  postgres_data:
+
+networks:
+  fastmarket-network:

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projects\\Diploma\\FastMarket.ua\\FastMarketBackEnd\\FastMarketBackEnd\\FastMarketBackEnd.csproj": {}
+    "E:\\FinalProject\\FastMarket.ua\\FastMarketBackEnd\\FastMarketBackEnd\\FastMarketBackEnd.csproj": {}
   },
   "projects": {
-    "D:\\projects\\Diploma\\FastMarket.ua\\FastMarketBackEnd\\FastMarketBackEnd\\FastMarketBackEnd.csproj": {
+    "E:\\FinalProject\\FastMarket.ua\\FastMarketBackEnd\\FastMarketBackEnd\\FastMarketBackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\Diploma\\FastMarket.ua\\FastMarketBackEnd\\FastMarketBackEnd\\FastMarketBackEnd.csproj",
+        "projectUniqueName": "E:\\FinalProject\\FastMarket.ua\\FastMarketBackEnd\\FastMarketBackEnd\\FastMarketBackEnd.csproj",
         "projectName": "FastMarketBackEnd",
-        "projectPath": "D:\\projects\\Diploma\\FastMarket.ua\\FastMarketBackEnd\\FastMarketBackEnd\\FastMarketBackEnd.csproj",
+        "projectPath": "E:\\FinalProject\\FastMarket.ua\\FastMarketBackEnd\\FastMarketBackEnd\\FastMarketBackEnd.csproj",
         "packagesPath": "C:\\Users\\nikol\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\Diploma\\FastMarket.ua\\FastMarketBackEnd\\FastMarketBackEnd\\obj\\",
+        "outputPath": "E:\\FinalProject\\FastMarket.ua\\FastMarketBackEnd\\FastMarketBackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -49,9 +50,61 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.13, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[8.6.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.6.2, )"
+              "version": "[7.2.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.6.0, )"
+            },
+            "UAParser": {
+              "target": "Package",
+              "version": "[3.1.47, )"
             }
           },
           "imports": [
@@ -73,7 +126,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\nikol\\.dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

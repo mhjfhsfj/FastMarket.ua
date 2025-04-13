@@ -2,9 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using FastMarketBackEnd.Data;
 using FastMarketBackEnd.DataTypes;
 using FastMarketBackEnd.DTOs;
@@ -12,6 +9,9 @@ using FastMarketBackEnd.models;
 using FastMarketBackEnd.services;
 using FastMarketBackEnd.Utility;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FastMarketBackEnd.Controllers
 {
@@ -155,7 +155,7 @@ namespace FastMarketBackEnd.Controllers
 
         [AllowAnonymous]
         [HttpPut(nameof(Refresh))]
-        public async Task<ActionResult<UserData>> Refresh([FromBody] string accessToken)
+        public async Task<ActionResult<UserDataAlt>> Refresh([FromBody] string accessToken)
         {
             try
             {

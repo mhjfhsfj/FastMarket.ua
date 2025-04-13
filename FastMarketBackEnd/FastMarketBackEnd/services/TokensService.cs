@@ -2,9 +2,9 @@
 using System.Security.Claims;
 using System.Security.Cryptography;
 using FastMarketBackEnd.Data;
-using FastMarketBackEnd.models;
 using FastMarketBackEnd.DataTypes;
 using FastMarketBackEnd.DTOs;
+using FastMarketBackEnd.models;
 using FastMarketBackEnd.Utility;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -157,7 +157,9 @@ namespace FastMarketBackEnd.services
         private string GenerateAccessToken(UserPhoneDTO user)
         {
             var now = DateTime.UtcNow;
-            var expires = now.Add(TimeSpan.FromSeconds(AccessTokenOptions.LIFETIME));
+            // var expires = now.Add(TimeSpan.FromSeconds(AccessTokenOptions.LIFETIME));
+            var expires = now.AddDays(AccessTokenOptions.LIFETIME);
+            
 
             var claims = new List<Claim>
             {

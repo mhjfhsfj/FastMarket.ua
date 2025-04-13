@@ -12,7 +12,7 @@ public class PrimaryСategory
     public DateTime? UpdatedAt { get; set; } = DateTime.UtcNow;
     public bool IsActive { get; set; } = true;
     
-    public List<Сategory>? Categories { get; set; }
+    
     
 }
 

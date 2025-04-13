@@ -10,7 +10,7 @@ public class PictureProduct
     public int Id { get; set; }
     public string FileName { get; set; }
     public string Path { get; set; }
-    public bool PreviewPicture { get; set; }
+    public bool PreviewPicture { get; set; } = false;
     
     [ForeignKey("ProductID")]
     public Product Product { get; set; }

@@ -1,11 +1,58 @@
 {
   "Version": 1,
-  "Hash": "2SCxnHM4G3GjLWT3x9BrFnAHkzoHoSPYQyMLfh68//o=",
+  "Hash": "G/HdyLXpbDQzeTjdni8ncMKF/IAPLOX/iX+hjlL0BJo=",
   "Source": "FastMarketBackEnd",
   "BasePath": "_content/FastMarketBackEnd",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "FastMarketBackEnd/wwwroot",
+      "Source": "FastMarketBackEnd",
+      "ContentRoot": "/media/nikolaity/files/Projects/diplom/FastMarket.ua/FastMarketBackEnd/FastMarketBackEnd/wwwroot/",
+      "BasePath": "_content/FastMarketBackEnd",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/media/nikolaity/files/Projects/diplom/FastMarket.ua/FastMarketBackEnd/FastMarketBackEnd/wwwroot/images/1.png",
+      "SourceId": "FastMarketBackEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "/media/nikolaity/files/Projects/diplom/FastMarket.ua/FastMarketBackEnd/FastMarketBackEnd/wwwroot/",
+      "BasePath": "_content/FastMarketBackEnd",
+      "RelativePath": "images/1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/1.png"
+    },
+    {
+      "Identity": "/media/nikolaity/files/Projects/diplom/FastMarket.ua/FastMarketBackEnd/FastMarketBackEnd/wwwroot/images/480317736.webp",
+      "SourceId": "FastMarketBackEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "/media/nikolaity/files/Projects/diplom/FastMarket.ua/FastMarketBackEnd/FastMarketBackEnd/wwwroot/",
+      "BasePath": "_content/FastMarketBackEnd",
+      "RelativePath": "images/480317736.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/480317736.webp"
+    }
+  ]
 }

@@ -1984,6 +1984,22 @@
           "lib/netcoreapp3.1/Mono.TextTemplating.dll": {}
         }
       },
+      "NetEscapades.Extensions.Logging.RollingFile/2.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "3.0.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/NetEscapades.Extensions.Logging.RollingFile.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/NetEscapades.Extensions.Logging.RollingFile.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
@@ -6649,6 +6665,21 @@
         "readme.md"
       ]
     },
+    "NetEscapades.Extensions.Logging.RollingFile/2.5.0": {
+      "sha512": "8tX6HIRGIpLZLHKzPYeaGxVgd/ZwqV/DeoJMM8qq1TZFy3K0vn3YjmeNxs0pdNMqce4XoW6wPzVnzu/eKw3pDQ==",
+      "type": "package",
+      "path": "netescapades.extensions.logging.rollingfile/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.0/NetEscapades.Extensions.Logging.RollingFile.dll",
+        "lib/netcoreapp3.0/NetEscapades.Extensions.Logging.RollingFile.xml",
+        "lib/netstandard2.0/NetEscapades.Extensions.Logging.RollingFile.dll",
+        "lib/netstandard2.0/NetEscapades.Extensions.Logging.RollingFile.xml",
+        "netescapades.extensions.logging.rollingfile.2.5.0.nupkg.sha512",
+        "netescapades.extensions.logging.rollingfile.nuspec"
+      ]
+    },
     "Newtonsoft.Json/13.0.3": {
       "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
@@ -8219,6 +8250,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.13",
       "Microsoft.IdentityModel.Tokens >= 8.6.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.7",
+      "NetEscapades.Extensions.Logging.RollingFile >= 2.5.0",
       "Newtonsoft.Json >= 13.0.3",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 8.0.11",
       "Swashbuckle.AspNetCore >= 7.2.0",
@@ -8227,32 +8259,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nikol\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/home/nikolaity/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\FinalProject\\FastMarket.ua\\FastMarketBackEnd\\FastMarketBackEnd\\FastMarketBackEnd.csproj",
+      "projectUniqueName": "/media/nikolaity/files/Projects/diplom/FastMarket.ua/FastMarketBackEnd/FastMarketBackEnd/FastMarketBackEnd.csproj",
       "projectName": "FastMarketBackEnd",
-      "projectPath": "E:\\FinalProject\\FastMarket.ua\\FastMarketBackEnd\\FastMarketBackEnd\\FastMarketBackEnd.csproj",
-      "packagesPath": "C:\\Users\\nikol\\.nuget\\packages\\",
-      "outputPath": "E:\\FinalProject\\FastMarket.ua\\FastMarketBackEnd\\FastMarketBackEnd\\obj\\",
+      "projectPath": "/media/nikolaity/files/Projects/diplom/FastMarket.ua/FastMarketBackEnd/FastMarketBackEnd/FastMarketBackEnd.csproj",
+      "packagesPath": "/home/nikolaity/.nuget/packages/",
+      "outputPath": "/media/nikolaity/files/Projects/diplom/FastMarket.ua/FastMarketBackEnd/FastMarketBackEnd/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\nikol\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/nikolaity/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
+        "/home/nikolaity/.dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -8312,6 +8337,10 @@
             "target": "Package",
             "version": "[8.0.7, )"
           },
+          "NetEscapades.Extensions.Logging.RollingFile": {
+            "target": "Package",
+            "version": "[2.5.0, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
@@ -8352,7 +8381,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/nikolaity/.dotnet/sdk/8.0.405/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

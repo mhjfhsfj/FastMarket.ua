@@ -13,7 +13,8 @@ public class Сategory
     public DateTime? UpdatedAt { get; set; } = DateTime.UtcNow;
     public bool IsActive { get; set; } = true;
     
-    [ForeignKey("PrimaryCategoryID")]
+    // [ForeignKey("PrimaryCategoryID")]
     // [ForeignKey("Id")]
+    public int PrimaryCategoryId { get; set; }
     public PrimaryСategory? PrimaryCategory { get; set; }
 }

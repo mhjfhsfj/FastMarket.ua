@@ -1,6 +1,7 @@
 ﻿using FastMarketBackEnd.Data;
-using FastMarketBackEnd.models;
 using FastMarketBackEnd.DTOs;
+using FastMarketBackEnd.models;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -9,18 +10,18 @@ namespace FastMarketBackEnd.services
     
     public class UsersService
     {
-        private readonly ApplicationContext db;
+        private readonly ApplicationContext _context;
         private readonly ILogger<UsersService> logger;
 
-        public UsersService(ApplicationContext db, ILogger<UsersService> logger)
+        public UsersService(ApplicationContext context, ILogger<UsersService> logger)
         {
-            this.db = db;
+            this._context = context;
             this.logger = logger;
         }
 
         public async Task<List<UserDto>> GetAllUsersAsync()
         {
-            var users = await this.db.Users.Select(u => u).ToListAsync();
+            var users = await this._context.Users.Select(u => u).ToListAsync();
 
             var usersList = new List<UserDto>();
 
@@ -29,11 +30,25 @@ namespace FastMarketBackEnd.services
                 usersList.Add(new UserDto
                 {
                     Id = user.Id,
-                    Email = user.email
+                    phone = user.phone
                 });
             }
 
             return usersList;
+        }
+
+        public Seller CreateSeller(Seller seller)
+        {
+            var _seller = this._context.Sellers.Add(seller);
+            this._context.SaveChanges();
+            return _seller.Entity;
+        }
+
+        public List<Seller> GetSeller()
+        {
+            var sellers = this._context.Sellers.Include(u=>u.User).ToList();
+                
+            return sellers;
         }
     }
 }

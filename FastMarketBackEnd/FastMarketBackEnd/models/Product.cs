@@ -11,7 +11,8 @@ public class Product
     [Required]
     public int Id { get; set; }
     public string Name { get; set; }
-    public string Brand { get; set; }
+    public string? Brand { get; set; }
+    public string? Model { get; set; }
     public String? Description { get; set; }
     public decimal? Price { get; set; } = 0;
     public int? Stock_quantity { get; set; } = 0;

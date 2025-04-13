@@ -8,7 +8,8 @@ namespace FastMarketBackEnd.Utility
         public const string ISSUER = "MyAuthServer"; // издатель токена
         public const string AUDIENCE = "MyAuthClient"; // потребитель токена
         private const string KEY = "mysupersecret_secretkey!123qwert"; // ключ для шифрации
-        public const int LIFETIME = 30; // время жизни токена - 30 секунд
+        // public const int LIFETIME = 30; // время жизни токена - 30 секунд
+        public const int LIFETIME =  5; // время жизни токена - дней секунд
 
         public static SymmetricSecurityKey GetSymmetricSecurityKey() => new SymmetricSecurityKey(Encoding.ASCII.GetBytes(KEY));
     }

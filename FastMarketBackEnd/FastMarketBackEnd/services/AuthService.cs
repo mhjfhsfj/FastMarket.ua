@@ -1,7 +1,7 @@
 ﻿using FastMarketBackEnd.Data;
-using FastMarketBackEnd.models;
 using FastMarketBackEnd.DataTypes;
 using FastMarketBackEnd.DTOs;
+using FastMarketBackEnd.models;
 using FastMarketBackEnd.services;
 using FastMarketBackEnd.Utility;
 using Microsoft.EntityFrameworkCore;

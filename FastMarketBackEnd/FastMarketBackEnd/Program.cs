@@ -8,7 +8,7 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Logging.AddFile();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -48,6 +48,8 @@ builder.Services.AddSingleton<TokensService>();
 builder.Services.AddScoped<UsersService>();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<SmsSevice>();
+builder.Services.AddScoped<CategoryService>();
+builder.Services.AddScoped<CatalogServices>();
 
 builder.Services.AddHostedService<ExpiredTokenCleaner>();
 
@@ -63,20 +65,23 @@ builder.Services.AddAuthorization();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-// if (app.Environment.IsDevelopment())
-// {
-//     app.UseSwagger();
-//     app.UseSwaggerUI();
-// }
-app.UseSwagger();
-app.UseSwaggerUI();
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+// app.UseSwagger();
+// app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 
 app.UseCookiePolicy();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllers();
 // app.UseEndpoints(endpoints => endpoints.MapControllers());

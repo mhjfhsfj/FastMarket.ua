@@ -10,36 +10,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0099313-1941-4000-8791-b2886b3788f2" name="Changes" comment="First Commit, empty asp.net project">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FastMarketBackEnd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FastMarketBackEnd/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/appsettings.Development.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/bin/Debug/net8.0/FastMarketBackEnd.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/bin/Debug/net8.0/FastMarketBackEnd.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/bin/Debug/net8.0/FastMarketBackEnd.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/bin/Debug/net8.0/FastMarketBackEnd.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/bin/Debug/net8.0/FastMarketBackEnd.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/bin/Debug/net8.0/FastMarketBackEnd.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/bin/Debug/net8.0/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/bin/Debug/net8.0/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/bin/Debug/net8.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/bin/Debug/net8.0/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/ref/FastMarketBackEnd.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/ref/FastMarketBackEnd.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/refint/FastMarketBackEnd.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/refint/FastMarketBackEnd.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/staticwebassets.build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.FastMarketBackEnd.props" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.FastMarketBackEnd.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.FastMarketBackEnd.props" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.FastMarketBackEnd.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/FastMarketBackEnd.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/FastMarketBackEnd.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/FastMarketBackEnd.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/FastMarketBackEnd.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/FastMarketBackEnd.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/FastMarketBackEnd.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/services/SmsSevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/services/SmsSevice.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +61,8 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b21fc3f8a3abb5d25f06c622276fbec0fd3932f169cc6af520bf5abc6a46b4/DbSet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bf9021a960b74107a7e141aa06bc9d8a0a53c929178c2fb95b1597be8af8dc/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/FastMarketBackEnd/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -85,7 +77,6 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2suLcTsgbeK0MqqKqQvUCzRxNae" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -93,7 +84,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.FastMarketBackEnd: IIS Express.executor": "Run",
-    ".NET Launch Settings Profile.FastMarketBackEnd: http.executor": "Run",
+    ".NET Launch Settings Profile.FastMarketBackEnd: http.executor": "Debug",
     ".NET Launch Settings Profile.FastMarketBackEnd: https.executor": "Run",
     "Docker.FastMarketBackEnd/Dockerfile base.executor": "Run",
     "Docker.FastMarketBackEnd/Dockerfile build.executor": "Run",
@@ -101,6 +92,7 @@
     "Docker.compose.yaml: Compose Deployment.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "XThreadsFramesViewSplitterKey": "0.42572945",
     "git-widget-placeholder": "test-auth",
     "last_opened_file_path": "/home/mykola/RiderProjects/FastMarket.ua/FastMarketBackEnd/FastMarketBackEnd/Dockerfile",
     "node.js.detected.package.eslint": "true",
@@ -108,7 +100,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "terminal",
+    "settings.editor.selected.configurable": "configurable.group.tools",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -320,6 +312,90 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="First Commit, empty asp.net project" />
     <option name="LAST_COMMIT_MESSAGE" value="First Commit, empty asp.net project" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FastMarketBackEnd/services/SmsSevice.cs</url>
+          <line>47</line>
+          <properties documentPath="$PROJECT_DIR$/FastMarketBackEnd/services/SmsSevice.cs" containingFunctionPresentation="Method 'SendSmsCodeAsync'">
+            <startOffsets>
+              <option value="1766" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1801" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FastMarketBackEnd/services/SmsSevice.cs</url>
+          <line>54</line>
+          <properties documentPath="$PROJECT_DIR$/FastMarketBackEnd/services/SmsSevice.cs" containingFunctionPresentation="Method 'SendSmsCodeAsync'">
+            <startOffsets>
+              <option value="2063" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2136" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FastMarketBackEnd/services/SmsSevice.cs</url>
+          <line>79</line>
+          <properties documentPath="$PROJECT_DIR$/FastMarketBackEnd/services/SmsSevice.cs" containingFunctionPresentation="Method 'SendSmsCodeAsync'">
+            <startOffsets>
+              <option value="3376" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3388" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FastMarketBackEnd/services/SmsSevice.cs</url>
+          <line>77</line>
+          <properties documentPath="$PROJECT_DIR$/FastMarketBackEnd/services/SmsSevice.cs" containingFunctionPresentation="Method 'SendSmsCodeAsync'">
+            <startOffsets>
+              <option value="3291" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3325" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FastMarketBackEnd/services/SmsSevice.cs</url>
+          <line>76</line>
+          <properties documentPath="$PROJECT_DIR$/FastMarketBackEnd/services/SmsSevice.cs" containingFunctionPresentation="Method 'SendSmsCodeAsync'">
+            <startOffsets>
+              <option value="3178" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3282" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FastMarketBackEnd/services/SmsSevice.cs</url>
+          <line>78</line>
+          <properties documentPath="$PROJECT_DIR$/FastMarketBackEnd/services/SmsSevice.cs" containingFunctionPresentation="Method 'SendSmsCodeAsync'">
+            <startOffsets>
+              <option value="3334" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3367" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

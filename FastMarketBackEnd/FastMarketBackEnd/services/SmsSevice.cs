@@ -17,11 +17,36 @@ public class SmsSevice
         this._logger = logger;
     }
 
-    public async Task<HttpContent> SendSmsCodeAsync(AuthPhoneDTO authPhoneDto)
+    // public async Task<HttpContent> SendSmsCodeAsync(AuthPhoneDTO authPhoneDto)
+    // {
+    //     var httpClient = new HttpClient();
+    //     var listPhone = new List<string>();
+    //     httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "E1w0O6eboxV-1CB");
+    //     listPhone.Add(authPhoneDto.PhoneNumber);
+    //
+    //     string code = GenaratorSmsCode();
+    //     
+    //     // отправляемый объект 
+    //     SmsDTO sms = new SmsDTO { phone = listPhone, message = $"CODE: {code}" };
+    //     
+    //     // создаем JsonContent
+    //     JsonContent content = JsonContent.Create(sms);
+    //     Console.WriteLine(content.ReadAsStringAsync().Result);
+    //     // отправляем запрос
+    //     using var response = await httpClient.PostAsync("https://im.smsclub.mobi/sms/send", content);
+    //     
+    //     _logger.LogInformation(response.Content.ReadAsStringAsync().Result);
+    //     await this._db.AddAsync(new UserPhoneCode
+    //         { PhoneCode = code, PhoneNumber = authPhoneDto.PhoneNumber });
+    //     await this._db.SaveChangesAsync();
+    //     return response.Content;
+    // }
+    
+    public async Task<string> SendSmsCodeAsync(AuthPhoneDTO authPhoneDto)
     {
-        var httpClient = new HttpClient();
+        // var httpClient = new HttpClient();
         var listPhone = new List<string>();
-        httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "E1w0O6eboxV-1CB");
+        // httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "E1w0O6eboxV-1CB");
         listPhone.Add(authPhoneDto.PhoneNumber);
 
         string code = GenaratorSmsCode();
@@ -30,16 +55,29 @@ public class SmsSevice
         SmsDTO sms = new SmsDTO { phone = listPhone, message = $"CODE: {code}" };
         
         // создаем JsonContent
-        JsonContent content = JsonContent.Create(sms);
-        Console.WriteLine(content.ReadAsStringAsync().Result);
+        // JsonContent content = JsonContent.Create(sms);
+        // Console.WriteLine(content.ReadAsStringAsync().Result);
         // отправляем запрос
-        using var response = await httpClient.PostAsync("https://im.smsclub.mobi/sms/send", content);
+        // using var response = await httpClient.PostAsync("https://im.smsclub.mobi/sms/send", content);
         
-        _logger.LogInformation(response.Content.ReadAsStringAsync().Result);
-        await this._db.AddAsync(new UserPhoneCode
-            { PhoneCode = code, PhoneNumber = authPhoneDto.PhoneNumber });
+        // _logger.LogInformation(response.Content.ReadAsStringAsync().Result);
+        // if (!this._db.AddAsync(new UserPhoneCode
+        //         { PhoneCode = code, PhoneNumber = authPhoneDto.PhoneNumber }).IsCompletedSuccessfully)
+        // {
+        //     _logger.LogError("Error add SmsCode to DB");
+        //     throw new Exception("Error add SmsCode to DB");
+        // }
+        // var result =  this._db.SaveChangesAsync();
+        // if (!result.IsCompletedSuccessfully)
+        // {
+        //     _logger.LogError($"Error save SmsCode to DB {result.Exception?.Message} bla bla bla");
+        //     
+        //     throw new Exception($"Error save SmsCode to DB {result.Exception?.Message}");
+        // }
+        await this._db.AddAsync(new UserPhoneCode { PhoneCode = code, PhoneNumber = authPhoneDto.PhoneNumber });
         await this._db.SaveChangesAsync();
-        return response.Content;
+        Console.WriteLine("bla bla bla");
+        return code;
     }
 
     public async Task<bool> ValidateCodeAsync(UserPhoneCodeDTO userPhoneCodeDto)

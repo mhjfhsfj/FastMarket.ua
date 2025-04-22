@@ -39,6 +39,10 @@ builder.Services.AddSwaggerGen(options =>
         }
     });
 });
+// builder.Services.AddDbContext<ApplicationContext>(options =>
+// {
+//     options.UseNpgsql(builder.Configuration.GetConnectionString("DbConnection"));
+// }, ServiceLifetime.Singleton);
 builder.Services.AddDbContext<ApplicationContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DbConnection"));

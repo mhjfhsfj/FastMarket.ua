@@ -25,9 +25,11 @@ namespace FastMarketBackEnd.Controllers
             _logger = logger;
             _usersService = usersService;
         }
+        
+        //--------------------------------------------------------------------------------------------------------------
 
         // GET: api/Seller
-        [HttpGet]
+        [HttpGet(nameof(GetSellers))]
         public async Task<ActionResult<IEnumerable<Seller>>> GetSellers()
         {
             try
@@ -42,56 +44,62 @@ namespace FastMarketBackEnd.Controllers
             }
             
         }
+        
+        //--------------------------------------------------------------------------------------------------------------
 
-        // // GET: api/Seller/5
-        // [HttpGet("{id}")]
-        // public async Task<ActionResult<Seller>> GetSeller(int id)
-        // {
-        //     var seller = await _context.Sellers.FindAsync(id);
-        //
-        //     if (seller == null)
-        //     {
-        //         return NotFound();
-        //     }
-        //
-        //     return seller;
-        // }
-        //
-        // // PUT: api/Seller/5
-        // // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        // [HttpPut("{id}")]
-        // public async Task<IActionResult> PutSeller(int id, Seller seller)
-        // {
-        //     if (id != seller.Id)
-        //     {
-        //         return BadRequest();
-        //     }
-        //
-        //     _context.Entry(seller).State = EntityState.Modified;
-        //
-        //     try
-        //     {
-        //         await _context.SaveChangesAsync();
-        //     }
-        //     catch (DbUpdateConcurrencyException)
-        //     {
-        //         if (!SellerExists(id))
-        //         {
-        //             return NotFound();
-        //         }
-        //         else
-        //         {
-        //             throw;
-        //         }
-        //     }
-        //
-        //     return NoContent();
-        // }
+        // GET: api/Seller/5
+        [HttpGet(nameof(GetSellerById)+"/{id}")]
+        public async Task<ActionResult<Seller>> GetSellerById(int id)
+        {
+            var seller = await _context.Sellers.FindAsync(id);
+        
+            if (seller == null)
+            {
+                return NotFound();
+            }
+        
+            return seller;
+        }
+        
+        //--------------------------------------------------------------------------------------------------------------
+        
+        // PUT: api/Seller/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut(nameof(ChangeSeller)+"/{id}")]
+        public async Task<IActionResult> ChangeSeller(int id, Seller seller)
+        {
+            if (id != seller.Id)
+            {
+                return BadRequest();
+            }
+        
+            _context.Entry(seller).State = EntityState.Modified;
+        
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!SellerExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+        
+            return NoContent();
+        }
+        
+        //--------------------------------------------------------------------------------------------------------------
 
         // POST: api/Seller
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Seller>> PostSeller(Seller seller)
+        [HttpPost(nameof(CreateSeller))]
+        public async Task<ActionResult<Seller>> CreateSeller(Seller seller)
         {
             try
             {
@@ -109,22 +117,26 @@ namespace FastMarketBackEnd.Controllers
                 return BadRequest(e.Message);
             }
         }
+        
+        //--------------------------------------------------------------------------------------------------------------
 
-        // // DELETE: api/Seller/5
-        // [HttpDelete("{id}")]
-        // public async Task<IActionResult> DeleteSeller(int id)
-        // {
-        //     var seller = await _context.Sellers.FindAsync(id);
-        //     if (seller == null)
-        //     {
-        //         return NotFound();
-        //     }
-        //
-        //     _context.Sellers.Remove(seller);
-        //     await _context.SaveChangesAsync();
-        //
-        //     return NoContent();
-        // }
+        // DELETE: api/Seller/5
+        [HttpDelete(nameof(DeleteSeller)+"/{id}")]
+        public async Task<IActionResult> DeleteSeller(int id)
+        {
+            var seller = await _context.Sellers.FindAsync(id);
+            if (seller == null)
+            {
+                return NotFound();
+            }
+        
+            _context.Sellers.Remove(seller);
+            await _context.SaveChangesAsync();
+        
+            return NoContent();
+        }
+        
+        //--------------------------------------------------------------------------------------------------------------
 
         private bool SellerExists(int id)
         {

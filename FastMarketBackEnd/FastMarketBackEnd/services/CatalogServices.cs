@@ -11,6 +11,7 @@ public class CatalogServices
     private readonly ApplicationContext _db;
     private readonly ILogger<TokensService> _logger;
     private readonly IWebHostEnvironment _env;
+    public HttpContext HttpContext { get; set; }
     public CatalogServices(ApplicationContext db, ILogger<TokensService> logger, IWebHostEnvironment env)
     {
         this._db = db;
@@ -22,16 +23,16 @@ public class CatalogServices
     public async Task<ProductDTO> CreateProduct(List<IFormFile> images, ProductDTO productDto)
     {
 
-        var category = new Сategory();
+        var category = new Category();
         var seller = new Seller();
-        if (productDto.CategoryId != null)
+        if (productDto.CategoryID != null)
         {
-            category = await this._db.Categories.FindAsync(productDto.CategoryId);
+            category = await this._db.Categories.FindAsync(productDto.CategoryID);
         }
 
-        if (productDto.SellerId != null)
+        if (productDto.SellerID != null)
         {
-            seller = await this._db.Sellers.FindAsync(productDto.SellerId);
+            seller = await this._db.Sellers.FindAsync(productDto.SellerID);
         }
         Product product = new Product
         {
@@ -53,7 +54,7 @@ public class CatalogServices
         foreach (var image in images)
         {
             var savedPicture = new PictureProduct();
-            // var uniqueName = Guid.NewGuid() + Path.GetExtension(image.FileName);
+           
             var uniqueName = Path.GetExtension(image.FileName);
             var savePath = Path.Combine(uploadsDir, image.FileName);
 
@@ -61,7 +62,8 @@ public class CatalogServices
             
             await image.CopyToAsync(stream);
             savedPicture.FileName = image.FileName;
-            savedPicture.Path = "wwwroot/images";
+            savedPicture.Path = "/images";
+            savedPicture.Link = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}{savedPicture.Path}/{savedPicture.FileName}";
             pictureProducts.Add(savedPicture);
             // savedFilePaths.Add(savePath);
         }
@@ -70,6 +72,8 @@ public class CatalogServices
         await this._db.SaveChangesAsync();
         
         var productDTOs = ConvertProductToDTO(productEntity.Entity);
+        
+        
 
         return productDTOs;
 
@@ -82,8 +86,8 @@ public class CatalogServices
             .Include(p=>p.Pictures)
             .Include(p => p.Category)
             .Include(p=>p.Seller)
+            .Include(p=>p.Characteristics)
             .ToListAsync();
-
         foreach (var product in products)
         {
             productDTOs.Add(ConvertProductToDTO(product));
@@ -93,16 +97,85 @@ public class CatalogServices
 
     public async Task<ProductDTO> GetProductById(int id)
     {
-        var product = await this._db.Products.FirstOrDefaultAsync(p=>p.Id==id);
+        var product = await this._db.Products
+            .Include(p=>p.Pictures)
+            .Include(p => p.Category)
+            .Include(p=>p.Seller)
+            .FirstOrDefaultAsync(p=>p.Id==id);
+        var characteristics = _db.Characteristics.Include(c=>c.NameCharacteristics)
+            .Where(c=>c.ProductId==product.Id)
+            .ToList();
+        product.Characteristics = characteristics;
         return ConvertProductToDTO(product);
     }
-
-    public async Task<List<ProductDTO>> DeleteProductById(int id)
+    public async Task<List<ProductDTO>> GetProductByCategoryId(int CatalogId)
     {
-        this._db.Products.Remove(await this._db.Products.FirstOrDefaultAsync(p=>p.Id==id));
-        this._db.SaveChanges();
+        List<ProductDTO> productDTOs = new List<ProductDTO>();
+        var products = this._db.Products
+            .Include(p=>p.Pictures)
+            .Include(p => p.Category)
+            .Include(p=>p.Seller)
+            .Include(p=>p.Characteristics)
+            .Where(p=>p.Category.Id==CatalogId);
+        if (products is null)
+        {
+            _logger.LogError("There are no products in the selected categories.");
+            throw new Exception("There are no products in the selected categories.");
+        }
+        foreach (var product in products)
+        {
+            productDTOs.Add(ConvertProductToDTO(product));
+        }
+        return productDTOs;
+    }
+    
+    public Task ChangeProductByCategoryId(int CatalogId, ProductDTO productDto)
+    {
+        var product = ConvertDtoToProduct(productDto);
         
-        return await this.GetProducts();
+        if (CatalogId!=product.Id)
+        {
+            _logger.LogError("selected product does not exist.");
+            throw new Exception("selected product does not exist.");
+        }
+        _db.Entry(product).State = EntityState.Modified;
+        
+        if(_db.SaveChangesAsync().IsCompletedSuccessfully)
+        {
+            _logger.LogInformation("Product was successfully changed.");
+        }
+        else
+        {
+            _logger.LogError("Product was not changed.");
+            throw new Exception("Product was not changed.");
+        }
+
+        return Task.CompletedTask;
+    }
+    public async Task DeleteProductById(int id)
+    {
+        var product = await this._db.Products.FirstOrDefaultAsync(p=>p.Id==id);
+        if (product is null)
+        {
+            _logger.LogError("Product does not exist.");
+            throw new Exception("Product does not exist.");
+        }
+
+        foreach (var picture in product.Pictures)
+        {
+            var imagePath = Path.Combine("wwwroot/images", picture.FileName);
+            if (System.IO.File.Exists(imagePath))
+            {
+                System.IO.File.Delete(imagePath);
+            }
+            this._db.Remove(picture);
+            await this._db.SaveChangesAsync();
+            this._logger.LogInformation($"Image from {product.Id}: {product.Name} was successfully deleted.");
+        }
+        
+        this._db.Products.Remove(product);
+        await this._db.SaveChangesAsync();
+        this._logger.LogInformation($"Product id: {product.Id}, name: {product.Name} was successfully deleted.");
     }
 
     public ProductDTO ConvertProductToDTO(Product product)
@@ -123,9 +196,13 @@ public class CatalogServices
             Model = product.Model,
             Brand = product.Brand,
             Stock_quantity = product.Stock_quantity,
-            SellerId = product.Seller.Id,
-            CategoryId = product.Category.Id,
+            SellerID = product.Seller.Id,
+            CategoryID = product.Category.Id,
             Pictures = listPicturesProductDTOs,
+            Characteristics = product.Characteristics,
+            Favorites = product.Favorites,
+            Ratings = product.Ratings,
+            Reviews = product.Reviews,
         };
         return productDto;
     }
@@ -142,9 +219,13 @@ public class CatalogServices
             Model = productDto.Model,
             Brand = productDto.Brand,
             Stock_quantity = productDto.Stock_quantity,
-            Seller = await this._db.Sellers.FirstOrDefaultAsync(s=>s.Id == productDto.SellerId),
-            Category = await this._db.Categories.FirstOrDefaultAsync(c => c.Id == productDto.CategoryId),
-            Pictures = listPictureProduct
+            Seller = await this._db.Sellers.FirstOrDefaultAsync(s=>s.Id == productDto.SellerID),
+            Category = await this._db.Categories.FirstOrDefaultAsync(c => c.Id == productDto.CategoryID),
+            Pictures = listPictureProduct,
+            Characteristics = productDto.Characteristics,
+            Favorites = productDto.Favorites,
+            Ratings = productDto.Ratings,
+            Reviews = productDto.Reviews,
         };
         return Product;
     }
@@ -157,6 +238,7 @@ public class CatalogServices
             FileName = pictureProduct.FileName,
             Path = pictureProduct.Path,
             PreviewPicture = pictureProduct.PreviewPicture,
+            Link = pictureProduct.Link,
             ProductID = pictureProduct.Product.Id
         };
         return pictureProductDTO;

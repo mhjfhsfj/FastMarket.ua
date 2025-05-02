@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FastMarketBackEnd.models;
 
-public class Сategory
+public class NameCharacteristics
 {
     [Key]
     [Required]
@@ -12,9 +12,6 @@ public class Сategory
     public DateTime? CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime? UpdatedAt { get; set; } = DateTime.UtcNow;
     public bool IsActive { get; set; } = true;
-    
-    // [ForeignKey("PrimaryCategoryID")]
-    // [ForeignKey("Id")]
-    public int PrimaryCategoryId { get; set; }
-    public PrimaryСategory? PrimaryCategory { get; set; }
+    public int CategoryId { get; set; }
+    public Category? Category { get; set; }
 }

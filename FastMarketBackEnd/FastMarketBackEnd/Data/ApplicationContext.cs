@@ -29,7 +29,7 @@ public  class ApplicationContext : DbContext
     public DbSet<StatusOsrder> StatusOsrders { get; set; }
     public DbSet<Cart> Carts { get; set; }
     public DbSet<User> Users { get; set; }
-    public DbSet<Сategory> Categories { get; set; }
+    public DbSet<Category> Categories { get; set; }
     public DbSet<Token> Tokens { get; set; }
     public DbSet<UserAgent> UsersAgent { get; set; }
     public DbSet<Favorite> Favorites { get; set; }
@@ -38,5 +38,7 @@ public  class ApplicationContext : DbContext
     public DbSet<Review> Reviews { get; set; }
     public DbSet<UserPhoneCode> UserPhoneCodes { get; set; }
     public DbSet<Seller> Sellers { get; set; }
+    public DbSet<NameCharacteristics> NameCharacteristics { get; set; }
+    public DbSet<Characteristics> Characteristics { get; set; }
     
 }

@@ -26,6 +26,7 @@ public class User
     public DateTime? UpdatedAt { get; set; } = DateTime.UtcNow;
     public bool? IsActive { get; set; } = true;
     
+    
     // public int SellerId { get; set; }
     // [ForeignKey("SellerID")]
     // public Seller? Seller { get; set; }

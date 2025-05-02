@@ -25,15 +25,15 @@ namespace FastMarketBackEnd.Controllers
         }
 
         // GET: api/Category
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Сategory>>> GetCategories()
+        [HttpGet(nameof(GetCategories))]
+        public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
         {
             return await _context.Categories.Include(c=>c.PrimaryCategory).ToListAsync();
         }
 
         // GET: api/Category/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Сategory>> GetСategory(int id)
+        [HttpGet(nameof(GetCategoryById)+"/{id}")]
+        public async Task<ActionResult<Category>> GetCategoryById(int id)
         {
             var сategory = await _context.Categories.FindAsync(id);
 
@@ -47,15 +47,15 @@ namespace FastMarketBackEnd.Controllers
 
         // PUT: api/Category/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutСategory(int id, Сategory сategory)
+        [HttpPut(nameof(ChangeСategory)+"/{id}")]
+        public async Task<IActionResult> ChangeСategory(int id, Category category)
         {
-            if (id != сategory.Id)
+            if (id != category.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(сategory).State = EntityState.Modified;
+            _context.Entry(category).State = EntityState.Modified;
 
             try
             {
@@ -78,17 +78,17 @@ namespace FastMarketBackEnd.Controllers
 
         // POST: api/Category
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Сategory>> PostСategory(Сategory сategory)
+        [HttpPost(nameof(CreateСategory))]
+        public async Task<ActionResult<Category>> CreateСategory(Category category)
         {
             try
             {
-                if (сategory.Name != null)
+                if (category.Name != null)
                 {
-                    _context.Categories.Add(сategory);
+                    _context.Categories.Add(category);
                     await _context.SaveChangesAsync();
 
-                    return CreatedAtAction("GetСategory", new { id = сategory.Id }, сategory);
+                    return CreatedAtAction("GetCategoryById", new { id = category.Id }, category);
                 }
                 // this._logger.LogError("Не вказана категорія");
                 throw new Exception("Не вказана категорія");
@@ -101,7 +101,7 @@ namespace FastMarketBackEnd.Controllers
         }
 
         // DELETE: api/Category/5
-        [HttpDelete("{id}")]
+        [HttpDelete(nameof(DeleteСategory)+"/{id}")]
         public async Task<IActionResult> DeleteСategory(int id)
         {
             var сategory = await _context.Categories.FindAsync(id);

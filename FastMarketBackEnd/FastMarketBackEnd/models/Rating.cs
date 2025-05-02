@@ -8,10 +8,14 @@ public class Rating
     [Key]
     [Required]
     public int Id { get; set; }
-    [ForeignKey("UserID")]
-    public User User { get; set; }
-    [ForeignKey("ProductID")]
-    public Product Product { get; set; }
-    public int Score { get; set; } // Наприклад, оцінка від 1 до 5
+    public int UserId { get; set; }
+    public User? User { get; set; }
+    public int ProductId { get; set; }
+    public Product? Product { get; set; }
+    [Range(1, 5, ErrorMessage = "Оцінка має бути від 1 до 5.")]
+    public int Score { get; set; }
+
+    
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 }

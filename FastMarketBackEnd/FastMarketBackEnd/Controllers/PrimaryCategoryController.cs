@@ -22,19 +22,21 @@ namespace FastMarketBackEnd.Controllers
             _context = context;
             _logger = logger;
         }
-
+        //--------------------------------------------------------------------------------------------------------------
         // GET: api/Category
-        [HttpGet]
+        [HttpGet(nameof(GetPrimaryСategories))]
         public async Task<ActionResult<IEnumerable<PrimaryСategory>>> GetPrimaryСategories()
         {
             var primaryCategory = await _context.PrimaryСategories.ToListAsync();
             
             return primaryCategory;
         }
+        
+        //--------------------------------------------------------------------------------------------------------------
 
         // GET: api/Category/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<PrimaryСategory>> GetPrimaryСategory(int id)
+        [HttpGet(nameof(GetPrimaryСategoryById)+"/{id}")]
+        public async Task<ActionResult<PrimaryСategory>> GetPrimaryСategoryById(int id)
         {
             var primaryСategory = await _context.PrimaryСategories.FindAsync(id);
 
@@ -45,11 +47,13 @@ namespace FastMarketBackEnd.Controllers
 
             return primaryСategory;
         }
+        
+        //--------------------------------------------------------------------------------------------------------------
 
         // PUT: api/Category/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutPrimaryСategory(int id, PrimaryСategory primaryСategory)
+        [HttpPut(nameof(ChangePrimaryСategory)+"/{id}")]
+        public async Task<IActionResult> ChangePrimaryСategory(int id, PrimaryСategory primaryСategory)
         {
             if (id != primaryСategory.Id)
             {
@@ -76,11 +80,13 @@ namespace FastMarketBackEnd.Controllers
 
             return NoContent();
         }
+        
+        //--------------------------------------------------------------------------------------------------------------
 
         // POST: api/Category
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<PrimaryСategory>> PostPrimaryСategory(PrimaryСategory primaryСategory)
+        [HttpPost(nameof(CreatePrimaryСategory))]
+        public async Task<ActionResult<PrimaryСategory>> CreatePrimaryСategory(PrimaryСategory primaryСategory)
         {
             try
             {
@@ -98,9 +104,11 @@ namespace FastMarketBackEnd.Controllers
                 return BadRequest($"Помилка запиту: {e.Message}");
             }
         }
+        
+        //--------------------------------------------------------------------------------------------------------------
 
         // DELETE: api/Category/5
-        [HttpDelete("{id}")]
+        [HttpDelete(nameof(DeletePrimaryСategory)+"/{id}")]
         public async Task<IActionResult> DeletePrimaryСategory(int id)
         {
             var primaryСategory = await _context.PrimaryСategories.FindAsync(id);
@@ -114,6 +122,8 @@ namespace FastMarketBackEnd.Controllers
 
             return NoContent();
         }
+        
+        //--------------------------------------------------------------------------------------------------------------
 
         private bool PrimaryСategoryExists(int id)
         {

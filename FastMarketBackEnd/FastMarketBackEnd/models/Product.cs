@@ -15,12 +15,13 @@ public class Product
     public string? Model { get; set; }
     public String? Description { get; set; }
     public decimal? Price { get; set; } = 0;
+    public decimal AverageScore { get; set; } = 0;
     public int? Stock_quantity { get; set; } = 0;
     [ForeignKey("CategoryID")]
-    public Сategory? Category { get; set; }
+    public Category? Category { get; set; }
     
     [ForeignKey("SellerID")]
-    public Seller Seller { get; set; }
+    public Seller? Seller { get; set; }
     
     public DateTime? CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime? UpdatedAt { get; set; } = DateTime.UtcNow;
@@ -28,6 +29,7 @@ public class Product
     public bool IsActive { get; set; } = true;
     
     public List<PictureProduct>? Pictures { get; set; }
+    public List<Characteristics>? Characteristics { get; set; }
     public List<Favorite>? Favorites { get; set; }
     public List<Rating>? Ratings { get; set; }
     public List<Review>? Reviews { get; set; }

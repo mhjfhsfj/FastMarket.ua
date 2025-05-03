@@ -6,5 +6,5 @@ public class SellerDTO
     public string Name { get; set; }
     public string Description { get; set; }
     
-    public UserDto User { get; set; }
+    public UserDto? User { get; set; }
 }

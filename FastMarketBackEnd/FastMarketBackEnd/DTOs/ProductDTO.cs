@@ -15,7 +15,9 @@ public class ProductDTO
     
     public int? CategoryID { get; set; }
     public int? SellerID { get; set; }
-    // public List<IFormFile>? Images { get; set; }
+    
+    public StatusModeration StatusModeration { get; set; }
+    public List<IFormFile>? Images { get; set; }
     public List<PictureProductDTO>? Pictures { get; set; }
     public List<Characteristics>? Characteristics { get; set; }
     public List<Favorite>? Favorites { get; set; }

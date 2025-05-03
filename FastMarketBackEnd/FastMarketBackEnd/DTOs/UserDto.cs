@@ -11,6 +11,6 @@ public class UserDto
     public string? LastName { get; set; } = null!;
     public string? email { get; set; }
     public string phone { get; set; } 
-    public Role? Role { get; set; } = null!;
+    public Role Role { get; set; } = Role.user;
     public SellerDTO? Seller { get; set; }
 }

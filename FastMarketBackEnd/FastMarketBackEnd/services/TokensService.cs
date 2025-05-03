@@ -60,7 +60,7 @@ namespace FastMarketBackEnd.services
             }
         }
 
-        public TokensData GenerateTokens(UserPhoneDTO user)
+        public TokensData GenerateTokens(User user)
         {
             this.logger.LogInformation("Generate refresh token");
             var refreshToken = this.GenerateRefreshToken();
@@ -129,7 +129,7 @@ namespace FastMarketBackEnd.services
             var userPhoneDto = new UserPhoneDTO() { Id = user.Id, Phone = user.phone };
 
             this.logger.LogInformation("Generate tokens");
-            var tokensDto = this.GenerateTokens(userPhoneDto);
+            var tokensDto = this.GenerateTokens(user);
 
             return new UserDataAlt() { UserPhoneDto = userPhoneDto, TokensData = tokensDto };
         }
@@ -154,7 +154,7 @@ namespace FastMarketBackEnd.services
 
         #region Private Methods
 
-        private string GenerateAccessToken(UserPhoneDTO user)
+        private string GenerateAccessToken(User user)
         {
             var now = DateTime.UtcNow;
             // var expires = now.Add(TimeSpan.FromSeconds(AccessTokenOptions.LIFETIME));
@@ -164,7 +164,8 @@ namespace FastMarketBackEnd.services
             var claims = new List<Claim>
             {
                 new(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new(ClaimTypes.MobilePhone, user.Phone)
+                new(ClaimTypes.MobilePhone, user.phone),
+                new (ClaimTypes.Role, user.Role.ToString()),
             };
 
             var jwt = new JwtSecurityToken(AccessTokenOptions.ISSUER,

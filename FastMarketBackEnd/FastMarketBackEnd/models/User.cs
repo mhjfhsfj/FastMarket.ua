@@ -18,16 +18,19 @@ public class User
     [Phone]
     public string phone { get; set; } 
     
-    // [ForeignKey("Id")]
-    [ForeignKey("RoleID")]
-    public Role? Role { get; set; } = null!;
+    public Role Role { get; set; } = Role.user;
     
     public DateTime? CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime? UpdatedAt { get; set; } = DateTime.UtcNow;
     public bool? IsActive { get; set; } = true;
     
     
-    // public int SellerId { get; set; }
-    // [ForeignKey("SellerID")]
-    // public Seller? Seller { get; set; }
+    public Seller? Seller { get; set; }
+}
+
+public enum Role
+{
+    admin,
+    user,
+    moderator
 }

@@ -17,17 +17,17 @@ public class Product
     public decimal? Price { get; set; } = 0;
     public decimal AverageScore { get; set; } = 0;
     public int? Stock_quantity { get; set; } = 0;
-    [ForeignKey("CategoryID")]
+    public int CategoryId { get; set; }
     public Category? Category { get; set; }
     
-    [ForeignKey("SellerID")]
+    public int SellerId { get; set; }
     public Seller? Seller { get; set; }
     
     public DateTime? CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime? UpdatedAt { get; set; } = DateTime.UtcNow;
     
     public bool IsActive { get; set; } = true;
-    
+    public StatusModeration StatusModeration { get; set; } = StatusModeration.notModerated;
     public List<PictureProduct>? Pictures { get; set; }
     public List<Characteristics>? Characteristics { get; set; }
     public List<Favorite>? Favorites { get; set; }

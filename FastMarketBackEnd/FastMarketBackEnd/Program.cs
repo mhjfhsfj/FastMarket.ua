@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using FastMarketBackEnd.BackgroundServices;
 using FastMarketBackEnd.Data;
 using FastMarketBackEnd.services;
@@ -13,6 +14,7 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
     options.JsonSerializerOptions.WriteIndented = true; // (опціонально)
+    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
 });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

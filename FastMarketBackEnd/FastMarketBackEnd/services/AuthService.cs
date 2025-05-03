@@ -69,7 +69,7 @@ namespace FastMarketBackEnd.services
             var userPhoneDto = new UserPhoneDTO() { Id = user.Id, Phone = user.phone };
     
             this.logger.LogInformation("Generate tokens");
-            var tokens = this.tokensService.GenerateTokens(userPhoneDto);
+            var tokens = this.tokensService.GenerateTokens(user);
     
             this.logger.LogInformation("Save refresh token");
             await this.tokensService.SaveRefreshTokenAsync(user.Id, tokens.RefreshJwt, userAgentData);
@@ -96,7 +96,7 @@ namespace FastMarketBackEnd.services
             var userPhoneDto = new UserPhoneDTO() { Id = addedUserId, Phone = request.PhoneNumber };
 
             this.logger.LogInformation("Generate tokens");
-            var tokens = this.tokensService.GenerateTokens(userPhoneDto);
+            var tokens = this.tokensService.GenerateTokens(userEntry.Entity);;
 
             this.logger.LogInformation("Save refresh token");
             await this.tokensService.SaveRefreshTokenAsync(addedUserId, tokens.RefreshJwt, userAgentData);

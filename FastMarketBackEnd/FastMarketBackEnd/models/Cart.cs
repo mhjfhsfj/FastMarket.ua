@@ -9,13 +9,11 @@ public class Cart
     [Required]
     public int Id { get; set; }
     
-    [ForeignKey("UserID")]
-    // [ForeignKey("Id")]
-    public User User { get; set; }
+    public int UserId { get; set; }
+    public User? User { get; set; }
     
-    [ForeignKey("ProductID")]
-    // [ForeignKey("Id")]
-    public Product Product { get; set; }
+    public int ProductId { get; set; }
+    public Product? Product { get; set; }
     
     public int Quantity { get; set; }
 }

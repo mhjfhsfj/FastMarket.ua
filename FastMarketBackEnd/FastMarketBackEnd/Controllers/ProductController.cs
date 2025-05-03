@@ -20,12 +20,46 @@ public class ProductController : ControllerBase
     
     //--------------------------------------------------------------------------------------------------------------
 
-    [HttpGet(nameof(GetProduct))]
-    public async Task<ActionResult<IEnumerable<ProductDTO>>> GetProduct()
+    [HttpGet(nameof(GetModeratedProducts))]
+    public async Task<ActionResult<IEnumerable<ProductDTO>>> GetModeratedProducts()
     {
         try
         {
-            var product = await _catalogServices.GetProducts();
+            var product = await _catalogServices.GetModeratedProducts();
+            return product;
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, e.Message);
+            return BadRequest(e.Message);
+        }
+    }
+    
+    //--------------------------------------------------------------------------------------------------------------
+
+    [HttpGet(nameof(GetNotModeratedProducts))]
+    public async Task<ActionResult<IEnumerable<ProductDTO>>> GetNotModeratedProducts()
+    {
+        try
+        {
+            var product = await _catalogServices.GetNotModeratedProducts();
+            return product;
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, e.Message);
+            return BadRequest(e.Message);
+        }
+    }
+    
+    //--------------------------------------------------------------------------------------------------------------
+
+    [HttpGet(nameof(GetAllProducts))]
+    public async Task<ActionResult<IEnumerable<ProductDTO>>> GetAllProducts()
+    {
+        try
+        {
+            var product = await _catalogServices.GetAllProducts();
             return product;
         }
         catch (Exception e)
@@ -70,6 +104,23 @@ public class ProductController : ControllerBase
     }
     
     //--------------------------------------------------------------------------------------------------------------
+
+    [HttpGet(nameof(GetProductBySellerId))]
+    public async Task<ActionResult<IEnumerable<ProductDTO>>> GetProductBySellerId(int id)
+    {
+        try
+        {
+            var product = await _catalogServices.GetProductBySellerId(id);
+            return product;
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e.Message);
+            return BadRequest(e.Message);
+        }
+    }
+    
+    //--------------------------------------------------------------------------------------------------------------
     
     [HttpPost(nameof(CreateProduct))]
     public async Task<IActionResult> CreateProduct( List<IFormFile> images, ProductDTO productDto)
@@ -79,7 +130,7 @@ public class ProductController : ControllerBase
             _catalogServices.HttpContext = HttpContext;
             var product = await _catalogServices.CreateProduct(images, productDto);
             return Ok(product);
-            return Ok();
+
         }
         catch (Exception e)
         {

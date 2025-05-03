@@ -34,7 +34,12 @@ namespace FastMarketBackEnd.Controllers
         {
             try
             {
-                var sellers = _usersService.GetSeller();
+                var sellers = await _usersService.GetSellers();
+                if (sellers == null)
+                {
+                    _logger.LogError("Sellers not found");
+                    return NotFound();
+                }
                 return sellers;
             }
             catch (Exception e)
@@ -51,7 +56,7 @@ namespace FastMarketBackEnd.Controllers
         [HttpGet(nameof(GetSellerById)+"/{id}")]
         public async Task<ActionResult<Seller>> GetSellerById(int id)
         {
-            var seller = await _context.Sellers.FindAsync(id);
+            var seller = _usersService.GetSellerById(id);
         
             if (seller == null)
             {
@@ -72,23 +77,15 @@ namespace FastMarketBackEnd.Controllers
             {
                 return BadRequest();
             }
-        
-            _context.Entry(seller).State = EntityState.Modified;
-        
+
             try
             {
-                await _context.SaveChangesAsync();
+                _usersService.UpdateSeller(seller);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception e)
             {
-                if (!SellerExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                _logger.LogError(e.Message);
+                return BadRequest(e.Message);
             }
         
             return NoContent();
@@ -129,9 +126,8 @@ namespace FastMarketBackEnd.Controllers
             {
                 return NotFound();
             }
-        
-            _context.Sellers.Remove(seller);
-            await _context.SaveChangesAsync();
+
+            await _usersService.DeleteSeller(id);
         
             return NoContent();
         }

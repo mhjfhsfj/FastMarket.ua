@@ -44,6 +44,7 @@ public class CatalogServices
             Model = productDto.Model,
             Brand = productDto.Brand,
             Seller = seller,
+            StatusModeration = StatusModeration.notModerated,
         };
         List<PictureProduct> pictureProducts = new List<PictureProduct>();
         var uploadsDir = Path.Combine(_env.WebRootPath, "images");
@@ -79,7 +80,39 @@ public class CatalogServices
 
     }
 
-    public async Task<List<ProductDTO>> GetProducts()
+    public async Task<List<ProductDTO>> GetModeratedProducts()
+    {
+        List<ProductDTO> productDTOs = new List<ProductDTO>();
+        var products = await this._db.Products
+            .Include(p=>p.Pictures)
+            .Include(p => p.Category)
+            .Include(p=>p.Seller)
+            .Include(p=>p.Characteristics).Where(p=>p.StatusModeration==StatusModeration.moderated)
+            .ToListAsync();
+        foreach (var product in products)
+        {
+            productDTOs.Add(ConvertProductToDTO(product));
+        }
+        return productDTOs;
+    }
+    
+    public async Task<List<ProductDTO>> GetNotModeratedProducts()
+    {
+        List<ProductDTO> productDTOs = new List<ProductDTO>();
+        var products = await this._db.Products
+            .Include(p=>p.Pictures)
+            .Include(p => p.Category)
+            .Include(p=>p.Seller)
+            .Include(p=>p.Characteristics).Where(p=>p.StatusModeration==StatusModeration.notModerated)
+            .ToListAsync();
+        foreach (var product in products)
+        {
+            productDTOs.Add(ConvertProductToDTO(product));
+        }
+        return productDTOs;
+    }
+    
+    public async Task<List<ProductDTO>> GetAllProducts()
     {
         List<ProductDTO> productDTOs = new List<ProductDTO>();
         var products = await this._db.Products
@@ -101,7 +134,7 @@ public class CatalogServices
             .Include(p=>p.Pictures)
             .Include(p => p.Category)
             .Include(p=>p.Seller)
-            .FirstOrDefaultAsync(p=>p.Id==id);
+            .FirstOrDefaultAsync(p=>p.Id==id && p.StatusModeration==StatusModeration.moderated);
         var characteristics = _db.Characteristics.Include(c=>c.NameCharacteristics)
             .Where(c=>c.ProductId==product.Id)
             .ToList();
@@ -111,16 +144,37 @@ public class CatalogServices
     public async Task<List<ProductDTO>> GetProductByCategoryId(int CatalogId)
     {
         List<ProductDTO> productDTOs = new List<ProductDTO>();
-        var products = this._db.Products
+        var products = await this._db.Products
             .Include(p=>p.Pictures)
             .Include(p => p.Category)
             .Include(p=>p.Seller)
             .Include(p=>p.Characteristics)
-            .Where(p=>p.Category.Id==CatalogId);
-        if (products is null)
+            .Where(p=>p.CategoryId==CatalogId && p.StatusModeration==StatusModeration.moderated).ToListAsync();
+        if (!products.Any())
         {
             _logger.LogError("There are no products in the selected categories.");
             throw new Exception("There are no products in the selected categories.");
+        }
+        foreach (var product in products)
+        {
+            productDTOs.Add(ConvertProductToDTO(product));
+        }
+        return productDTOs;
+    }
+    
+    public async Task<List<ProductDTO>> GetProductBySellerId(int SellerId)
+    {
+        List<ProductDTO> productDTOs = new List<ProductDTO>();
+        var products = await this._db.Products
+            .Include(p=>p.Pictures)
+            .Include(p => p.Category)
+            .Include(p=>p.Seller)
+            .Include(p=>p.Characteristics)
+            .Where(p=>p.SellerId==SellerId).ToListAsync();
+        if (!products.Any())
+        {
+            _logger.LogError("There are no products in the selected seller.");
+            throw new Exception("There are no products in the selected seller.");
         }
         foreach (var product in products)
         {
@@ -203,6 +257,7 @@ public class CatalogServices
             Favorites = product.Favorites,
             Ratings = product.Ratings,
             Reviews = product.Reviews,
+            StatusModeration = product.StatusModeration,
         };
         return productDto;
     }
@@ -226,6 +281,7 @@ public class CatalogServices
             Favorites = productDto.Favorites,
             Ratings = productDto.Ratings,
             Reviews = productDto.Reviews,
+            StatusModeration = productDto.StatusModeration,
         };
         return Product;
     }

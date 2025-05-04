@@ -16,6 +16,7 @@ public class ProductController : ControllerBase
         _catalogServices = catalogServices;
         _logger = logger;
         
+        
     }
     
     //--------------------------------------------------------------------------------------------------------------
@@ -25,6 +26,7 @@ public class ProductController : ControllerBase
     {
         try
         {
+            _catalogServices.HttpContext = HttpContext;
             var product = await _catalogServices.GetModeratedProducts();
             return product;
         }
@@ -42,6 +44,7 @@ public class ProductController : ControllerBase
     {
         try
         {
+            _catalogServices.HttpContext = HttpContext;
             var product = await _catalogServices.GetNotModeratedProducts();
             return product;
         }
@@ -59,6 +62,7 @@ public class ProductController : ControllerBase
     {
         try
         {
+            _catalogServices.HttpContext = HttpContext;
             var product = await _catalogServices.GetAllProducts();
             return product;
         }
@@ -76,6 +80,7 @@ public class ProductController : ControllerBase
     {
         try
         {
+            _catalogServices.HttpContext = HttpContext;
             var product = await _catalogServices.GetProductById(id);
             return product;
         }
@@ -93,6 +98,7 @@ public class ProductController : ControllerBase
     {
         try
         {
+            _catalogServices.HttpContext = HttpContext;
             var product = await _catalogServices.GetProductByCategoryId(id);
             return product;
         }
@@ -110,6 +116,7 @@ public class ProductController : ControllerBase
     {
         try
         {
+            _catalogServices.HttpContext = HttpContext;
             var product = await _catalogServices.GetProductBySellerId(id);
             return product;
         }
@@ -143,6 +150,7 @@ public class ProductController : ControllerBase
     {
         try
         {
+            _catalogServices.HttpContext = HttpContext;
            await _catalogServices.ChangeProductByCategoryId(id, productDto);
         }
         catch (Exception e)
@@ -159,6 +167,7 @@ public class ProductController : ControllerBase
     {
         try
         {
+            _catalogServices.HttpContext = HttpContext;
             await _catalogServices.DeleteProductById(id);
         }
         catch (Exception e)

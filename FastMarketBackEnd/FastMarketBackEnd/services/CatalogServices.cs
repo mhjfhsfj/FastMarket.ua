@@ -238,7 +238,7 @@ public class CatalogServices
         if (product.Pictures != null)
             foreach (var picture in product.Pictures)
             {
-                listPicturesProductDTOs.Add(ConvertPictureToDTO(picture));
+                listPicturesProductDTOs.Add(ConvertPictureToDto(picture));
             }
 
         var productDto = new ProductDTO()
@@ -262,7 +262,7 @@ public class CatalogServices
         return productDto;
     }
 
-    public async Task<Product> ConvertDtoToProduct(ProductDTO productDto)
+    private async Task<Product> ConvertDtoToProduct(ProductDTO productDto)
     {
         var listPictureProduct = new List<PictureProduct>();
         foreach (var picture in productDto.Pictures){listPictureProduct.Add(await ConvertDTOToPicture(picture));}
@@ -286,9 +286,9 @@ public class CatalogServices
         return Product;
     }
 
-    public PictureProductDTO ConvertPictureToDTO(PictureProduct pictureProduct)
+    private PictureProductDTO ConvertPictureToDto(PictureProduct pictureProduct)
     {
-        var pictureProductDTO = new PictureProductDTO()
+        var pictureProductDto = new PictureProductDTO()
         {
             Id = pictureProduct.Id,
             FileName = pictureProduct.FileName,
@@ -297,10 +297,10 @@ public class CatalogServices
             Link = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}{pictureProduct.Link}",  
             ProductID = pictureProduct.Product.Id
         };
-        return pictureProductDTO;
+        return pictureProductDto;
     }
 
-    public async Task<PictureProduct> ConvertDTOToPicture(PictureProductDTO pictureProductDto)
+    private async Task<PictureProduct> ConvertDTOToPicture(PictureProductDTO pictureProductDto)
     {
         var product = await this._db.Products.FirstOrDefaultAsync(p=>p.Id == pictureProductDto.ProductID);
         var pictureProduct = new PictureProduct()

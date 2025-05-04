@@ -43,7 +43,7 @@ public class CatalogServices
             Category = category,
             Model = productDto.Model,
             Brand = productDto.Brand,
-            Seller = seller,
+            SellerId = (int)productDto.SellerID,
             StatusModeration = StatusModeration.notModerated,
         };
         List<PictureProduct> pictureProducts = new List<PictureProduct>();
@@ -64,7 +64,7 @@ public class CatalogServices
             await image.CopyToAsync(stream);
             savedPicture.FileName = image.FileName;
             savedPicture.Path = "/images";
-            savedPicture.Link = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}{savedPicture.Path}/{savedPicture.FileName}";
+            savedPicture.Link = $"{savedPicture.Path}/{savedPicture.FileName}";
             pictureProducts.Add(savedPicture);
             // savedFilePaths.Add(savePath);
         }
@@ -294,7 +294,7 @@ public class CatalogServices
             FileName = pictureProduct.FileName,
             Path = pictureProduct.Path,
             PreviewPicture = pictureProduct.PreviewPicture,
-            Link = pictureProduct.Link,
+            Link = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}{pictureProduct.Link}",  
             ProductID = pictureProduct.Product.Id
         };
         return pictureProductDTO;

@@ -10,17 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0099313-1941-4000-8791-b2886b3788f2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FastMarketBackEnd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FastMarketBackEnd/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/bin/Debug/net8.0/FastMarketBackEnd.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/bin/Debug/net8.0/FastMarketBackEnd.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/bin/Debug/net8.0/FastMarketBackEnd.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/bin/Debug/net8.0/FastMarketBackEnd.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/ref/FastMarketBackEnd.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/ref/FastMarketBackEnd.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/refint/FastMarketBackEnd.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/refint/FastMarketBackEnd.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/services/SmsSevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/services/SmsSevice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +44,10 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/FastMarketBackEnd/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///media/nikolaity/files/Projects/diplom/FastMarket.ua/FastMarketBackEnd/FastMarketBackEnd/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///media/nikolaity/files/Projects/diplom/FastMarket.ua/FastMarketBackEnd/FastMarketBackEnd/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///media/nikolaity/files/Projects/diplom/FastMarket.ua/FastMarketBackEnd/FastMarketBackEnd/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///media/nikolaity/files/Projects/diplom/FastMarket.ua/FastMarketBackEnd/FastMarketBackEnd/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///media/nikolaity/files/Projects/diplom/FastMarket.ua/FastMarketBackEnd/FastMarketBackEnd/appsettings.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{

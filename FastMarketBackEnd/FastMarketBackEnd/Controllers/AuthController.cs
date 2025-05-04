@@ -92,8 +92,8 @@ namespace FastMarketBackEnd.Controllers
         {
             try
             {
-                smsService.SendSmsCodeAsync(request);
-               return this.Ok();
+                var code = await smsService.SendSmsCodeAsync(request);
+               return this.Ok(code);
             }
             catch (Exception e)
             {

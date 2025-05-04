@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
 using FastMarketBackEnd.BackgroundServices;
 using FastMarketBackEnd.Data;
+using FastMarketBackEnd.DataTypes;
 using FastMarketBackEnd.services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Logging.AddFile();
+builder.Services.Configure<SettingApp>(
+    builder.Configuration.GetSection("SettingApp"));
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
@@ -56,6 +59,7 @@ builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<SmsSevice>();
 builder.Services.AddScoped<CategoryService>();
 builder.Services.AddScoped<CatalogServices>();
+builder.Services.AddScoped<CartService>();
 
 builder.Services.AddHostedService<ExpiredTokenCleaner>();
 

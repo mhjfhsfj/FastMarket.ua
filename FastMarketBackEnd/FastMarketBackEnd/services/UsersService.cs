@@ -21,47 +21,64 @@ namespace FastMarketBackEnd.services
 
         public async Task<List<UserDto>> GetAllUsersAsync()
         {
-            var users = await this._context.Users.Select(u => u).ToListAsync();
-
-            
-
-            var usersList = users.Select(u => new UserDto
-            {
-                Id = u.Id,
-                Name = u.Name,
-                SecondName = u.SecondName,
-                LastName = u.LastName,
-                email = u.email,
-                phone = u.phone,
-                Role = u.Role,
-                Seller = new SellerDTO
-                {
-                    Id = u.Seller.Id,
-                    Name = u.Seller.Name,
-                    Description = u.Seller.Description
-                }
-            }).ToList();
-
-            // foreach (var user in users)
+            var users = await this._context.Users.Include(u=>u.Seller).ToListAsync();
+            // var usersList = users.Select(u => new UserDto
             // {
-            //     usersList.Add(new UserDto
+            //     Id = u.Id,
+            //     Name = u.Name,
+            //     SecondName = u.SecondName,
+            //     LastName = u.LastName,
+            //     email = u.email,
+            //     phone = u.phone,
+            //     Role = u.Role,
+            //     
+            //     Seller = new SellerDTO
             //     {
-            //         Id = user.Id,
-            //         Name = user.Name,
-            //         SecondName = user.SecondName,
-            //         LastName = user.LastName,
-            //         email = user.email,
-            //         phone = user.phone,
-            //         Role = user.Role,
-            //         Seller = new SellerDTO
-            //         {
-            //             Id = user.Seller.Id,
-            //             Name = user.Seller.Name,
-            //             Description = user.Seller.Description
-            //         }
+            //     Id = u.SellerId
             //         
-            //     });
-            // }
+            //
+            //     }
+            // }).ToList();
+            
+            var usersList = new List<UserDto>();
+
+            foreach (var user in users)
+            {
+                if (user.Seller != null)
+                {
+                    usersList.Add(new UserDto
+                    {
+                        Id = user.Id,
+                        Name = user.Name,
+                        SecondName = user.SecondName,
+                        LastName = user.LastName,
+                        email = user.email,
+                        phone = user.phone,
+                        Role = user.Role,
+                        Seller = new SellerDTO
+                        {
+                            Id = user.Seller.Id,
+                            Name = user.Seller.Name,
+                            Description = user.Seller.Description
+                        }
+                    
+                    });
+                }
+                else
+                {
+                    usersList.Add(new UserDto
+                    {
+                        Id = user.Id,
+                        Name = user.Name,
+                        SecondName = user.SecondName,
+                        LastName = user.LastName,
+                        email = user.email,
+                        phone = user.phone,
+                        Role = user.Role,
+                    });
+                }
+            }
+            _logger.LogInformation($"______________USER___________");
 
             return usersList;
         }
@@ -74,24 +91,44 @@ namespace FastMarketBackEnd.services
                 _logger.LogError("User not found");
                 throw new Exception("User not found");
             }
+            
+            UserDto userDTO;
 
-            var userDTO = new UserDto
+            if (user.Seller != null)
             {
-                Id = user.Id,
-                Name = user.Name,
-                SecondName = user.SecondName,
-                LastName = user.LastName,
-                email = user.email,
-                phone = user.phone,
-                Role = user.Role,
-                Seller = new SellerDTO
+                 userDTO = new UserDto
                 {
-                    Id = user.Seller.Id,
-                    Name = user.Seller.Name,
-                    Description = user.Seller.Description
-                }
-            };
+                    Id = user.Id,
+                    Name = user.Name,
+                    SecondName = user.SecondName,
+                    LastName = user.LastName,
+                    email = user.email,
+                    phone = user.phone,
+                    Role = user.Role,
+                    Seller = new SellerDTO
+                    {
+                        Id = user.Seller.Id,
+                        Name = user.Seller.Name,
+                        Description = user.Seller.Description
+                    }
+                    
+                };
+            }
+            else
+            {
+                 userDTO = new UserDto
+                {
+                    Id = user.Id,
+                    Name = user.Name,
+                    SecondName = user.SecondName,
+                    LastName = user.LastName,
+                    email = user.email,
+                    phone = user.phone,
+                    Role = user.Role,
+                };
+            }
 
+            
             return userDTO;
         }
 

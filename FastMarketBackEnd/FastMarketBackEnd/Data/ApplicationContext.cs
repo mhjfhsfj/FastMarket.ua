@@ -39,7 +39,6 @@ public  class ApplicationContext : DbContext
     public DbSet<OrderDetails> OrderDetails { get; set; }
     public DbSet<PrimaryСategory> PrimaryСategories { get; set; }
     public DbSet<Product> Products { get; set; }
-    public DbSet<StatusOsrder> StatusOsrders { get; set; }
     public DbSet<Cart> Carts { get; set; }
     public DbSet<User> Users { get; set; }
     public DbSet<Category> Categories { get; set; }
@@ -53,5 +52,6 @@ public  class ApplicationContext : DbContext
     public DbSet<Seller> Sellers { get; set; }
     public DbSet<NameCharacteristics> NameCharacteristics { get; set; }
     public DbSet<Characteristics> Characteristics { get; set; }
+    
     
 }

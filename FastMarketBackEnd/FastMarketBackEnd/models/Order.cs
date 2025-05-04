@@ -9,13 +9,20 @@ public class Order
     [Required]
     public int Id { get; set; }
     
-    [ForeignKey("UserID")]
-    // [ForeignKey("Id")]
+    public int UserId { get; set; }
     public User User { get; set; }
     
     public decimal TotalPrice { get; set; }
     public DateTime? CreatedAt { get; set; } = DateTime.UtcNow;
-    
-    
-    public StatusOsrder? StatusOsrder { get; set; }
+
+
+    public StatusOsrder? StatusOsrder { get; set; } = models.StatusOsrder.inProcessing;
+}
+
+public enum StatusOsrder
+{
+    inProcessing, 
+    inDelivery, 
+    received, 
+    canceled
 }

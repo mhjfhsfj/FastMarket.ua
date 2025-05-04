@@ -9,12 +9,10 @@ public class OrderDetails
     [Required]
     public int Id { get; set; }
     
-    [ForeignKey("OrderID")]
-    // [ForeignKey("Id")]
+    public int OrderId { get; set; }
     public Order Order { get; set; }
     
-    [ForeignKey("ProducrID")]
-    // [ForeignKey("Id")]
+    public int ProductId { get; set; }
     public Product Product { get; set; }
     
     public int Quantity { get; set; }

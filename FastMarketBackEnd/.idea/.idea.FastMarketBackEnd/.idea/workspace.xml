@@ -10,37 +10,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0099313-1941-4000-8791-b2886b3788f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/FastMarketBackEnd/Controllers/ModerationController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FastMarketBackEnd/Controllers/UserController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FastMarketBackEnd/DataTypes/SettingApp.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FastMarketBackEnd/Utility/ApiException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FastMarketBackEnd/services/CartService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FastMarketBackEnd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FastMarketBackEnd/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/Controllers/ProductController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/Controllers/ProductController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/Controllers/RoleController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/Controllers/SellerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/Controllers/SellerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/DTOs/ProductDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/DTOs/ProductDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/Controllers/AuthController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/DTOs/SellerDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/DTOs/SellerDTO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/DTOs/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/DTOs/UserDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/Data/ApplicationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/Data/ApplicationContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/bin/Debug/net8.0/FastMarketBackEnd.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/bin/Debug/net8.0/FastMarketBackEnd.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/bin/Debug/net8.0/FastMarketBackEnd.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/bin/Debug/net8.0/FastMarketBackEnd.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/models/Cart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/models/Cart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/models/Moderation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/models/Moderation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/models/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/models/Product.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/models/Role.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/models/Seller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/models/Seller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/models/StatusModeration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/models/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/models/Order.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/models/OrderDetails.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/models/OrderDetails.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/models/StatusOsrder.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/FastMarketBackEnd.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/ref/FastMarketBackEnd.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/ref/FastMarketBackEnd.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/refint/FastMarketBackEnd.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/obj/Debug/net8.0/refint/FastMarketBackEnd.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/services/AuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/services/CatalogServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/services/CatalogServices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/services/TokensService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/services/TokensService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/services/SmsSevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/services/SmsSevice.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastMarketBackEnd/services/UsersService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMarketBackEnd/services/UsersService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,33 +84,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.FastMarketBackEnd: IIS Express.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.FastMarketBackEnd: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.FastMarketBackEnd: https.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.FastMarketBackEnd/Dockerfile base.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.FastMarketBackEnd/Dockerfile build.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.FastMarketBackEnd/Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;backend&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/mykola/RiderProjects/FastMarket.ua/FastMarketBackEnd/FastMarketBackEnd/Dockerfile&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.FastMarketBackEnd: IIS Express.executor": "Run",
+    ".NET Launch Settings Profile.FastMarketBackEnd: http.executor": "Run",
+    ".NET Launch Settings Profile.FastMarketBackEnd: https.executor": "Run",
+    "Docker.FastMarketBackEnd/Dockerfile base.executor": "Run",
+    "Docker.FastMarketBackEnd/Dockerfile build.executor": "Run",
+    "Docker.FastMarketBackEnd/Dockerfile.executor": "Run",
+    "Docker.compose.yaml: Compose Deployment.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "backend",
+    "last_opened_file_path": "/home/mykola/RiderProjects/FastMarket.ua/FastMarketBackEnd/FastMarketBackEnd/Dockerfile",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "terminal",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RiderProblemsViewState">
     <option name="showIgnored" value="true" />
   </component>
@@ -354,6 +347,32 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="26" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FastMarketBackEnd/services/UsersService.cs</url>
+          <line>23</line>
+          <properties documentPath="$PROJECT_DIR$/FastMarketBackEnd/services/UsersService.cs" containingFunctionPresentation="Method 'GetAllUsersAsync'">
+            <startOffsets>
+              <option value="663" />
+            </startOffsets>
+            <endOffsets>
+              <option value="736" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FastMarketBackEnd/services/UsersService.cs</url>
+          <line>22</line>
+          <properties documentPath="$PROJECT_DIR$/FastMarketBackEnd/services/UsersService.cs" containingFunctionPresentation="Method 'GetAllUsersAsync'">
+            <startOffsets>
+              <option value="649" />
+            </startOffsets>
+            <endOffsets>
+              <option value="650" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

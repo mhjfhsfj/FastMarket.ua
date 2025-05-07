@@ -1,55 +1,19 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using FastMarketBackEnd.models;
 
-namespace FastMarketBackEnd.models;
+namespace FastMarketBackEnd.DTOs;
 
-public class Order
+public class GetOrderDTO
 {
-    [Key]
-    [Required]
     public int                     Id { get; set; }
-    public int                     UserId { get; set; }
     public User?                   User { get; set; }
-    
-    public int                     SellerId { get; set; }
     public Seller?                 Seller { get; set; }
     
     public string                  DeliveryAddress { get; set; } = string.Empty;
     public string                  Phone { get; set; } = string.Empty;
     public decimal                 TotalPrice { get; set; } = 0;
-    public DateTime?               CreatedAt { get; set; } = DateTime.UtcNow;
-    public DateTime?               UpdatedAt { get; set; } = DateTime.UtcNow;
     public List<OrderDetails>     OrderDetails { get; set; }
     public StatusOrder?           StatusOsrder { get; set; } = models.StatusOrder.Pending;
     public PaymentMethod?         PaymentMethod { get; set; } = models.PaymentMethod.Card;
     public DeliveryMethod?        DeliveryMethod { get; set; } = models.DeliveryMethod.Postal;
     public PaymentStatus?         PaymentStatus { get; set; } = models.PaymentStatus.Pending;
-}
-
-public enum StatusOrder
-{
-    Pending,
-    Processing,
-    Shipped,
-    Delivered,
-    Cancelled
-}
-
-public enum PaymentMethod
-{
-    Card,
-    NovaPost
-}
-
-public enum DeliveryMethod
-{
-    Postal,
-    Courier
-}
-
-public enum PaymentStatus
-{
-    Pending,
-    Success,
-    Failed
 }

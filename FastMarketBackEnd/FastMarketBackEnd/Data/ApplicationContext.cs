@@ -24,6 +24,18 @@ public  class ApplicationContext : DbContext
         modelBuilder.Entity<User>()
             .Property(p => p.Role)
             .HasConversion<string>(); 
+        modelBuilder.Entity<Order>()
+            .Property(p => p.StatusOsrder)
+            .HasConversion<string>(); 
+        modelBuilder.Entity<Order>()
+            .Property(p => p.PaymentMethod)
+            .HasConversion<string>(); 
+        modelBuilder.Entity<Order>()
+            .Property(p => p.DeliveryMethod)
+            .HasConversion<string>(); 
+        modelBuilder.Entity<Order>()
+            .Property(p => p.PaymentStatus)
+            .HasConversion<string>(); 
 
         base.OnModelCreating(modelBuilder);
     }

@@ -10,11 +10,11 @@ public class ProductDTO
     public string? Model { get; set; }
     public string? Brand { get; set; }
     public string? Description { get; set; }
-    public decimal? Price { get; set; }
-    public int? Stock_quantity { get; set; }
+    public decimal Price { get; set; }
+    public int Stock_quantity { get; set; }
     
-    public int? CategoryID { get; set; }
-    public int? SellerID { get; set; }
+    public int CategoryID { get; set; }
+    public int SellerID { get; set; }
     
     public StatusModeration StatusModeration { get; set; }
     public List<IFormFile>? Images { get; set; }

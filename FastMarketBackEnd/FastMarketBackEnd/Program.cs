@@ -3,6 +3,7 @@ using FastMarketBackEnd.BackgroundServices;
 using FastMarketBackEnd.Data;
 using FastMarketBackEnd.DataTypes;
 using FastMarketBackEnd.services;
+using FastMarketBackEnd.Utility;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -13,6 +14,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Logging.AddFile();
 builder.Services.Configure<SettingApp>(
     builder.Configuration.GetSection("SettingApp"));
+builder.Services.Configure<LiqPayOptions>(
+    builder.Configuration.GetSection("LiqPay"));
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
@@ -60,6 +63,9 @@ builder.Services.AddScoped<SmsSevice>();
 builder.Services.AddScoped<CategoryService>();
 builder.Services.AddScoped<CatalogServices>();
 builder.Services.AddScoped<CartService>();
+builder.Services.AddScoped<OrderService>();
+builder.Services.AddScoped<NovaPostService>();
+builder.Services.AddScoped<LiqPayService>();
 
 builder.Services.AddHostedService<ExpiredTokenCleaner>();
 

@@ -1,10 +1,10 @@
 namespace FastMarketBackEnd.Utility;
 
-public class ApiException : Exception
+public class NotFoundException : Exception
 {
     public int StatusCode { get; }
 
-    public ApiException(string message, int statusCode) : base(message)
+    public NotFoundException(string message, int statusCode) : base(message)
     {
         StatusCode = statusCode;
     }
